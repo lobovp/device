@@ -12,9 +12,9 @@
    ========================================================================== */
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 /*
@@ -28,13 +28,13 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 /*
@@ -42,12 +42,12 @@ html {
  */
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 /*
@@ -62,7 +62,7 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 /*
@@ -70,9 +70,9 @@ video {
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -80,16 +80,323 @@ fieldset {
  */
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+    font-family: "Gilroylight";
+    src: url("../fonts/web/gilroylight.woff") format("woff");
+    src: url("../fonts/web/opensans.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+:root {
+    box-sizing: border-box;
+    font-size: .875em;
+    /*изменение шрифта относительно вьюпорта*/
+    /* font-size: calc(1vw + 0.5em);*/
+    /*color*/
+    --white: #ffffff;
+    --yellow: #f2e4b5;
+    --grey: gray;
+}
+
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: "Gilroylight", "opensans", sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/*лоботомированная сова*/
+* + * {
+    margin-top: 2em;
+}
+
+/*------Links--------*/
+a:link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+    opacity: .6;
+}
+
+/* Эффект при нажатии */
+a:active {
+    color: #000000;
+    opacity: .3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2em 4em;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    padding: 1em 0;
+    color: #ffffff;
+    background: #81b3d2;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*========Header=========*/
+.header {
+    position: relative;
+    max-width: 100%;
+    min-height: 300px;
+    background: var(--yellow);
+    padding: 1.5em 4em 0;
+}
+
+.logo {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    left: 3.7em;
+    top: -35px;
+    margin: 0 auto;
+}
+
+.logo-text {
+    font-size: 3.5em;
+    font-family: "Gilroylight", "opensans", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-search {
+    display: flex;
+    width: 30%;
+    /* align-items: flex-end;*/
+    align-items: center;
+}
+
+/*выделяет блок ,если дочерний элемент в фокусе*/
+.main-search:focus-within {
+    border-bottom: 2px solid #000000;
+    position: relative;
+}
+
+.top-search {
+    background: var(--yellow);
+    border: none;
+    outline: none; /* Убираем рамку */
+    padding: .5em 0 .5em .5em;
+}
+
+/*.main-search::before {
+    content: " ";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../img/search.svg") no-repeat;
+    position: relative;
+    top: -6px;
+    padding-right: 1em;
+}*/
+
+.top-search:hover::placeholder {
+    color: rgba(0, 0, 0, .8);
+}
+
+.sbtn {
+    opacity: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    border: none;
+    background: transparent;
+    padding: .75em 1em;
+    position: absolute;
+    top: -9px;
+    right: 0;
+    margin-left: 2em;
+}
+
+.top-search:focus + .sbtn {
+    opacity: 1;
+    border: 2px ridge #000000;
+    border-bottom: solid transparent;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.top-menu li {
+    margin: 0;
+    font-size: 1.07143em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.top-menu li + li {
+    margin-left: 5em;
+    padding-left: 20px;
+}
+
+.top-menu .top-menu-left {
+    margin-right: auto;
+}
+
+.top-link {
+    line-height: 2;
+    display: inline-block;
+}
+
+.top-link__user::before {
+    content: " ";
+    display: inline-block;
+    background: url("../img/user.svg") no-repeat;
+    width: 13px;
+    height: 13px;
+    position: relative;
+    top: 2px;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.top-link__compare::before {
+    content: " ";
+    display: inline-block;
+    background: url("../img/compare.svg") no-repeat;
+    width: 13px;
+    height: 13px;
+    position: relative;
+    top: 3px;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.top-link__basket::before {
+    content: " ";
+    display: inline-block;
+    background: url("../img/cart.svg") no-repeat;
+    width: 13px;
+    height: 13px;
+    position: relative;
+    top: 2px;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.main-menu {
+    display: flex;
+    position: relative;
+}
+
+.main-menu li + li {
+    margin-top: 0;
+    /* margin-left: 10em;*/
+}
+
+.main-menu-list {
+    display: flex;
+    width: 50%;
+}
+
+.main-menu-list li + li {
+    margin-left: 5em;
+}
+
+.main-menu-list .menu-item__right {
+    margin-left: auto;
+}
+
+.main-menu .main-menu__left {
+    margin-right: auto;
+}
+
+/*------submenu--------*/
+.submenu-wrap {
+    display: none;
+}
+
+.submenu {
+    position: absolute;
+    display: flex;
+    /* background: #c4c4c4;*/
+    top: 40px;
+    left: 0;
+    width: 100%;
+}
+
+.submenu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 22%;
+    height: 160px;
+}
+
+.menu-item__dropdown:hover .submenu-wrap {
+    display: block;
+    cursor: pointer;
+}
+
+.submenu .submenu-list li {
+    font-size: 1em;
+    line-height: 2;
+    margin-left: 0;
+    text-transform: capitalize;
+}
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
+Helper classes
+========================================================================== */
 
 /*
  * Hide visually and from screen readers
@@ -97,7 +404,7 @@ textarea {
 
 .hidden,
 [hidden] {
-  display: none !important;
+    display: none !important;
 }
 
 /*
@@ -110,16 +417,16 @@ textarea {
  */
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
 }
 
 /*
@@ -130,13 +437,13 @@ textarea {
 
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
 }
 
 /*
@@ -144,7 +451,7 @@ textarea {
  */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
@@ -161,12 +468,12 @@ textarea {
 
 .clearfix::before,
 .clearfix::after {
-  content: " ";
-  display: table;
+    content: " ";
+    display: table;
 }
 
 .clearfix::after {
-  clear: both;
+    clear: both;
 }
 
 /* ==========================================================================
@@ -176,14 +483,14 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+    /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -193,71 +500,71 @@ textarea {
    ========================================================================== */
 
 @media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        /* Black prints faster */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
 
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
 
-  pre {
-    white-space: pre-wrap !important;
-  }
+    pre {
+        white-space: pre-wrap !important;
+    }
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
+    /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
 
