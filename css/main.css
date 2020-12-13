@@ -122,24 +122,37 @@ body {
     margin-top: 2em;
 }
 
+
 /*------Links--------*/
-a:link {
+.top-link:link {
     color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
-a:visited {
+.footer .top-link:link {
+    color: #ffffff;
+}
+
+.top-link:visited {
     color: #000000;
 }
 
-a:hover {
+.footer .top-link:visited {
+    color: #ffffff;
+}
+
+.top-link:hover {
     color: #000000;
     opacity: .6;
 }
 
+.footer .top-link:hover {
+    color: #ffffff;
+}
+
 /* Эффект при нажатии */
-a:active {
+.top-link:active {
     color: #000000;
     opacity: .3;
 }
@@ -150,6 +163,10 @@ h3,
 h4,
 h5,
 h6 {
+    margin: 0;
+}
+
+p {
     margin: 0;
 }
 
@@ -393,6 +410,97 @@ button {
     margin-left: 0;
     text-transform: capitalize;
 }
+
+/*=======Footer=======*/
+.footer {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.container__footer {
+    background: #464646;
+    padding: 4em 4em;
+}
+
+/*.footer-wrap div + div {
+    margin-top: 0;
+}*/
+
+.footer-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /*background: #ff182c;*/
+}
+
+.logo-text.logo-text__yellow {
+    color: #ffc600;
+}
+
+.footer-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    /*background: #2ad01a;*/
+}
+
+.footer-icon * + *,
+.footer-menu * + * {
+    margin: 0;
+}
+
+.footer-icon .main-menu-list {
+    align-items: center;
+    width: auto;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-address {
+    text-transform: capitalize;
+}
+
+.footer-icon .main-menu-list a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-icon .menu-item {
+    margin: 0;
+    padding: 0 15px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /*background: #1591d6;*/
+}
+
+.hr-line {
+    width: 80px;
+    height: 7px;
+    background: #ffc600;
+}
+
+.social-icon .icon-list {
+    display: flex;
+}
+
+.icon-list .icon-item + .icon-item {
+    margin-top: 0;
+    padding-left: 15px;
+}
+
+
+/*=======Footer Ends=======*/
 
 /* ==========================================================================
 Helper classes
